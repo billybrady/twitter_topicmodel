@@ -164,7 +164,7 @@ tweet_top_terms %>%
   mutate(term = reorder_within(term, beta, topic)) %>%
   ggplot(aes(term, beta, fill = factor(topic))) +
   geom_col(show.legend = FALSE) +
-  facet_wrap(~ topic, scales = "free") +
+  facet_wrap(~ topic, scales = "free", ncol = 5) +
   coord_flip() +
   scale_x_reordered()
 ```
